@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          path: helm/kubernetes-csr-exporter
 
       - name: Configure Git
         run: |
