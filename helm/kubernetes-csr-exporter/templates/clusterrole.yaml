@@ -1,0 +1,12 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "kubernetes-csr-exporter.fullname" . }}
+  labels:
+    {{- include "kubernetes-csr-exporter.labels" . | nindent 4 }}
+rules:
+  - verbs:
+      - list
+    apiGroups:
+    resources:
+      - certificatesigningrequests

@@ -1,0 +1,14 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "kubernetes-csr-exporter.fullname" . }}
+  labels:
+    {{- include "kubernetes-csr-exporter.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "kubernetes-csr-exporter.serviceAccountName" . }}
+    namespace: {{ template "kubernetes-csr-exporter.namespace" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "kubernetes-csr-exporter.fullname" . }}

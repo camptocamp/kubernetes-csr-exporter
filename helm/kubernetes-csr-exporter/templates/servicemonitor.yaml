@@ -1,17 +1,12 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
+  name: {{ include "kubernetes-csr-exporter.fullname" . }}
   labels:
-    managed-prometheus: is-metrics
-  name: kuberbetes-csr
+    {{- include "kubernetes-csr-exporter.labels" . | nindent 4 }}
 spec:
   endpoints:
     - port: http
-  jobLabel: kuberbetes-csr
+  jobLabel: {{ include "kubernetes-csr-exporter.fullname" . }}
   selector:
-    matchLabels:
-      app.kubernetes.io/name: kubernetes-csr-exporter
-  namespaceSelector:
-    matchNames:
-      - is-monitoring
-  selector: {}
+    matchLabels: {{ include "kubernetes-csr-exporter.matchLabels" . | nindent 6 }}
