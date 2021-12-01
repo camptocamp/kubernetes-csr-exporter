@@ -11,7 +11,6 @@ from prometheus_client import Gauge,generate_latest
 CONTENT_TYPE_LATEST = str('text/plain; version=0.0.4; charset=utf-8')
 
 c = Gauge('kube_csr_pending', 'List of unapproved CSR', ['name'])
-config.load_kube_config()
 
 app = Flask(__name__)
 
