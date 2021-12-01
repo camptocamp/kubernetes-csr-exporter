@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: helm
 
       - name: Configure Git
         run: |
@@ -18,5 +16,7 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
+        with:
+          charts_dir: helm/kubernetes-csr-exporter
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
