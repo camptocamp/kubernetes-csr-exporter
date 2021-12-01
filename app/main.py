@@ -17,7 +17,9 @@ app = Flask(__name__)
 @app.route("/metrics")
 def metrics():
   try:
-    configuration = kubernetes.client.Configuration().load_incluster_config()
+    
+    
+    configuration = config.load_incluster_config() #kubernetes.client.Configuration().load_incluster_config()
 
     with kubernetes.client.ApiClient(configuration) as api_client:
       api_instance = kubernetes.client.CertificatesV1beta1Api(api_client)
