@@ -3,6 +3,16 @@ entries:
   kubernetes-csr-exporter:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-12-02T14:23:17.019859674Z"
+    description: A Helm chart for Kubernetes
+    digest: 7256118e4fd03e1d179f61a2d7ac3fcb1710ef8e1498e686aae01a4adaf7e0c8
+    name: kubernetes-csr-exporter
+    type: application
+    urls:
+    - https://github.com/camptocamp/kubernetes-csr-exporter/releases/download/kubernetes-csr-exporter-0.1.5/kubernetes-csr-exporter-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-12-02T09:51:54.161825229Z"
     description: A Helm chart for Kubernetes
     digest: 72015606efa4bb976914eab411596549c29388f39315e4d00d78ba73e67a8320
