@@ -37,6 +37,10 @@ spec:
             - name: http
               containerPort: 5000
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
